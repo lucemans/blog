@@ -3,27 +3,35 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<a href="https://luc.page" target="_blank">[<span class="text-blue-500 hover:underline">page</span>]</a>
-		<a href="https://luc.contact" target="_blank">[<span class="text-blue-500 hover:underline">contact</span>]</a>
-		<a href="https://luc.computer" target="_blank">[<span class="text-blue-500 hover:underline">computer</span>]</a>
-		<a href="https://luc.domains" target="_blank">[<span class="text-blue-500 hover:underline">domains</span>]</a>
-	</nav>
-	<!-- <nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/p">Posts</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-	</nav> -->
+<header class="w-full bg-gray-50 p-2">
+    <nav>
+        <a href="/" class="text-2xl font-bold">.blog</a>
+        <a href="https://luc.page" target="_blank"
+            >[<span class="text-blue-500 hover:underline">page</span>]</a
+        >
+        <a href="https://luc.contact" target="_blank"
+            >[<span class="text-blue-500 hover:underline">contact</span>]</a
+        >
+        <a href="https://luc.computer" target="_blank"
+            >[<span class="text-blue-500 hover:underline">computer</span>]</a
+        >
+        <a href="https://luc.domains" target="_blank"
+            >[<span class="text-blue-500 hover:underline">domains</span>]</a
+        >
+    </nav>
+
+    <div class="flex justify-between">
+        <p>
+            <a href="https://luc.bio"> Luc van Kampen</a>
+        </p>
+        <p>Confidential</p>
+    </div>
 </header>
 <style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+    header {
+        margin: 0em 0 2em;
+    }
+    h2 {
+        margin: 0.5em 0;
+    }
 </style>

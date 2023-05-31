@@ -38,13 +38,20 @@ const posts = (await getCollection('p')).sort(
     <body class="ww">
         <Header title={SITE_TITLE} />
         <main>
-            <h1>luc.blog</h1>
+            <img src="/think.webp" class="w-32 mx-auto mb-4" />
+
             <p>
                 This page is an aggregate of technical writing, proposals,
                 documents, & much more.
             </p>
 
-            <p>Also available over [RSS](https://luc.blog/rss.xml)</p>
+            <p>Also available over <a href="/rss.xml">RSS</a></p>
+
+            <note>
+                <p>
+                    This website stores formal works, proposals, and documents.
+                </p>
+            </note>
 
             <div class="border-b w-full h-0 my-4"></div>
 
