@@ -29,12 +29,13 @@ const posts = (await getCollection('p')).sort(
                 font-style: italic;
                 color: #595959;
             }
-            ul li a:visited {
+            ul li a:visited .x {
+                display: none;
                 color: #8e32dc;
             }
         </style>
     </head>
-    <body class="mx-auto max-w-2xl">
+    <body class="ww">
         <Header title={SITE_TITLE} />
         <main>
             <h1>luc.blog</h1>
@@ -46,13 +47,26 @@ const posts = (await getCollection('p')).sort(
             <div class="border-b w-full h-0 my-4"></div>
 
             <section>
-                <ul>
+                <ul class="grid grid-cols-1 gap-2">
                     {
                         posts.map((post) => (
-                            <li>
-                                <FormattedDate date={post.data.pubDate} />
-                                <a href={`/p/${post.slug}/`}>
-                                    {post.data.title}
+                            <li class="">
+                                <a
+                                    href={`/p/${post.slug}/`}
+                                    class="p-2 w-full hover:bg-gray-50"
+                                >
+                                    <div class="flex justify-between w-full">
+                                        <h2 class="font-bold">
+                                            {post.data.title}
+                                        </h2>
+
+                                        <span>
+                                            <FormattedDate
+                                                date={post.data.pubDate}
+                                            />
+                                        </span>
+                                    </div>
+                                    <p>{post.data.description}</p>
                                 </a>
                             </li>
                         ))
