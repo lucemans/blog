@@ -10,11 +10,25 @@ import FormattedDate from '../components/FormattedDate.astro';
 const posts = (await getCollection('p')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: posts.map((post, indexedDB, p) => ({
+            '@type': 'ListItem',
+            position: p.length - indexedDB,
+            url: `https://luc.blog/p/${post.slug}`,
+        })).reverse(),
+    },
+});
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script type="application/ld+json" set:html={schema} />
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
         <style>
             ul {
