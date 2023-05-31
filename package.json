@@ -1,0 +1,26 @@
+{
+    "name": "page",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "next",
+        "build": "next build",
+        "lint": "eslint -c .eslintrc.json --ext .ts ./src"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "next": "^13.4.4"
+    },
+    "devDependencies": {
+        "@types/node": "20.2.5",
+        "@types/react": "18.2.7",
+        "@typescript-eslint/parser": "^5.59.8",
+        "eslint": "^8.41.0",
+        "eslint-plugin-v3xlabs": "^1.6.0",
+        "typescript": "5.0.4"
+    }
+}
